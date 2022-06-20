@@ -11,7 +11,7 @@ class BankAccount {
     this.balance += amount;
   }
 
-  withdrawal(amount) {
+  withdraw(amount) {
     this.balance -= amount;
   }
 }

@@ -20,7 +20,7 @@ describe('BankAccount', () => {
     it('should decrease the balance by the specified amount', () => {
       const account = new BankAccount();
       account.deposit(200);
-      account.withdrawal(100);
+      account.withdraw(100);
       expect(account.printStatement()).toEqual(100);
     });
   });
