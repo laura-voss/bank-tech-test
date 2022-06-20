@@ -11,8 +11,8 @@ describe('BankAccount', () => {
   describe('.deposit', () => {
     it('should increase the balance by the specified amount', () => {
       const account = new BankAccount();
-      expect(account.deposit(100)).toBe(100);
+      account.deposit(100);
+      expect(account.printStatement()).toEqual(100);
     });
   });
-  
-})
+});
