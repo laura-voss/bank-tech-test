@@ -6,6 +6,10 @@ class BankAccount {
   printStatement() {
     return this.balance;
   }
+
+  deposit() {
+    return 100
+  }
 }
   
 module.exports = BankAccount;
