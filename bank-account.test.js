@@ -41,9 +41,10 @@ describe('BankAccount', () => {
   describe('printStatement', () => {
     it('should return a string with transaction information for each transaction', () => {
       const account = new BankAccount();
-      account.deposit(100);
-      account.withdraw(50);
-      expect(account.printStatement()).toEqual("date || credit || debit || balance\n21/06/2022 ||  || 50.00 || 50.00\n21/06/2022 || 100.00 ||  || 100.00");
+      account.deposit(1000);
+      account.deposit(2000);
+      account.withdraw(500);
+      expect(account.printStatement()).toEqual("date || credit || debit || balance\n21/06/2022 ||  || 500.00 || 2500.00\n21/06/2022 || 2000.00 ||  || 3000.00\n21/06/2022 || 1000.00 ||  || 1000.00");
     });
   });
 
