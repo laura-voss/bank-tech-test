@@ -46,5 +46,12 @@ describe('BankAccount', () => {
       expect(account.printStatement()).toEqual("credit || debit || balance\n || 50 || 50\n100 ||  || 100");
     });
   });
+
+  describe('.valueConverter', () => {
+    it('should return a number with 2 digits after the decimal point', () => {
+      const account = new BankAccount();
+      expect(account.valueConverter(1)).toBe('1.00');
+    });
+  });
 });
  

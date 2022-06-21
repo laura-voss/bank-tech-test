@@ -21,13 +21,17 @@ class BankAccount {
   printStatement() {
     const output = [];
     const printOut = ["credit || debit || balance"];
-    console.log("transaction", this.transactions)
     for(let i = 0; i < this.transactions.length; i ++){
-      output.unshift(`\n${this.transactions[i].credit} || ${this.transactions[i].debit} || ${this.transactions[i].balance}`);
+      output.unshift(`\n${(this.transactions[i].credit)} || ${this.transactions[i].debit} || ${this.transactions[i].balance}`);
     }
     printOut.push(output);
     const str = printOut.flat(1).join('');
     return str;
+  }
+
+  valueConverter(amount) {
+    const num = parseFloat(amount).toFixed(2);
+    return num;
   }
 }
   
