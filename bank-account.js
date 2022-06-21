@@ -1,13 +1,15 @@
 class BankAccount {
   constructor() {
     this.balance = 0;
+    this.transactions = [];
   }
   
-  printStatement() {
+  checkBalance() {
     return this.balance;
   }
 
   deposit(amount) {
+    this.transactions.push({amount: amount, type: "credit"});
     this.balance += amount;
   }
 
