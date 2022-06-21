@@ -10,19 +10,19 @@ class BankAccount {
 
   deposit(amount) {
     const subtotal = this.balance += amount;
-    this.transactions.push({credit: amount, debit: "", balance: subtotal});
+    this.transactions.push({date: "21/06/2022", credit: amount, debit: "", balance: subtotal});
   }
   
   withdraw(amount) {
     const subtotal = this.balance -= amount;
-    this.transactions.push({credit: "", debit: amount, balance: subtotal});
+    this.transactions.push({date: "21/06/2022", credit: "", debit: amount, balance: subtotal});
   }
 
   printStatement() {
     const output = [];
-    const printOut = ["credit || debit || balance"];
+    const printOut = ["date || credit || debit || balance"];
     for(let i = 0; i < this.transactions.length; i ++){
-      output.unshift(`\n${this.valueConverter(this.transactions[i].credit)} || ${this.valueConverter(this.transactions[i].debit)} || ${this.valueConverter(this.transactions[i].balance)}`);
+      output.unshift(`\n21/06/2022 || ${this.valueConverter(this.transactions[i].credit)} || ${this.valueConverter(this.transactions[i].debit)} || ${this.valueConverter(this.transactions[i].balance)}`);
     }
     printOut.push(output);
     const str = printOut.flat(1).join('');
