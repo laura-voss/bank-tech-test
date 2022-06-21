@@ -27,14 +27,14 @@ describe('BankAccount', () => {
     it('should create a record of each deposit transaction and add to the array', () => {
       const account = new BankAccount();
       account.deposit(100);
-      expect(account.transactions).toContainEqual({"credit": 100, "debit": "", "balance": 100});
+      expect(account.transactions).toContainEqual({"credit": 100.00, "debit": "", "balance": 100.00});
     });
     
     it('should create a record of each withdraw transaction and add to the array', () => {
       const account = new BankAccount();
       account.deposit(100);
       account.withdraw(50);
-      expect(account.transactions).toContainEqual({"credit": 100, "debit": "", "balance": 100}, {"credit": "", "debit": 50, "balance": 50});
+      expect(account.transactions).toContainEqual({"credit": 100.00, "debit": "", "balance": 100.00}, {"credit": "", "debit": 50.00, "balance": 50.00});
     });
   });  
   
@@ -43,7 +43,7 @@ describe('BankAccount', () => {
       const account = new BankAccount();
       account.deposit(100);
       account.withdraw(50);
-      expect(account.printStatement()).toEqual("credit || debit || balance\n || 50 || 50\n100 ||  || 100");
+      expect(account.printStatement()).toEqual("credit || debit || balance\n || 50.00 || 50.00\n100.00 ||  || 100.00");
     });
   });
 
