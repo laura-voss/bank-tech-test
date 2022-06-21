@@ -26,10 +26,17 @@ describe('BankAccount', () => {
   });
 
   describe('.transactions', () => {
-    it('should create a record of each transaction and add to the array', () => {
+    it('should create a record of each deposit transaction and add to the array', () => {
       const account = new BankAccount();
       account.deposit(100);
       expect(account.transactions).toContainEqual({type: "credit", amount: 100});
     });
+    
+    it('should create a record of each withdraw transaction and add to the array', () => {
+      const account = new BankAccount();
+      account.withdraw(100);
+      expect(account.transactions).toContainEqual({type: "debit", amount: 100});
+    });
   });
 });
+ 

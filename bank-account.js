@@ -12,8 +12,9 @@ class BankAccount {
     this.transactions.push({amount: amount, type: "credit"});
     this.balance += amount;
   }
-
+  
   withdraw(amount) {
+    this.transactions.push({amount: amount, type: "it"});
     this.balance -= amount;
   }
 }
