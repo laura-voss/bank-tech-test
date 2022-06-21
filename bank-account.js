@@ -9,13 +9,13 @@ class BankAccount {
   }
 
   deposit(amount) {
-    this.transactions.push({amount: amount, type: "credit"});
-    this.balance += amount;
+    const subtotal = this.balance += amount;
+    this.transactions.push({credit: amount, debit: "", balance: subtotal});
   }
   
   withdraw(amount) {
-    this.transactions.push({amount: amount, type: "it"});
-    this.balance -= amount;
+    const subtotal = this.balance -= amount;
+    this.transactions.push({credit: "", debit: amount, balance: subtotal});
   }
 }
   
