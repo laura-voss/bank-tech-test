@@ -1,6 +1,16 @@
-const BankAccount = require('./bank-account')
+const BankAccount = require('./bank-account');
+const timekeeper = require('timekeeper');
+
 
 describe('BankAccount', () => {
+  beforeAll(() => {
+    timekeeper.freeze(new Date('2022-06-21'));
+  });
+
+  afterAll(() => {
+    timekeeper.reset();
+  });
+
   it('should be created with an initial balance of 0', () => {
     const account = new BankAccount();
     expect(account.checkBalance()).toBe(0);
@@ -58,7 +68,7 @@ describe('BankAccount', () => {
   describe('getDate', () => {
     it('should return teh current Date' , () => {
       const account = new BankAccount();
-      expect(account.getDate()).toBe("22/06/2022");
+      expect(account.getDate()).toBe("21/06/2022");
     });
   });
 });
