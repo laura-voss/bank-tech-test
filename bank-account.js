@@ -40,7 +40,8 @@ class BankAccount {
   }
 
   getDate() {
-    return "22/06/2022";
+    let today = new Date().toLocaleDateString();
+    return today;
   }
 }
   
