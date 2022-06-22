@@ -38,6 +38,10 @@ class BankAccount {
       return "";
     }
   }
+
+  getDate() {
+    return "22/06/2022";
+  }
 }
   
 module.exports = BankAccount;

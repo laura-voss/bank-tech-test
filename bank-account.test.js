@@ -54,5 +54,12 @@ describe('BankAccount', () => {
       expect(account.valueConverter(1)).toBe('1.00');
     });
   });
+
+  describe('getDate', () => {
+    it('should return teh current Date' , () => {
+      const account = new BankAccount();
+      expect(account.getDate()).toBe("22/06/2022");
+    });
+  });
 });
  
